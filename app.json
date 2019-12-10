@@ -1,30 +1,47 @@
 {
-  "expo": {
-    "name": "CS 47 Final Project",
-    "slug": "finalProject",
-    "privacy": "public",
-    "sdkVersion": "35.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    }
-  }
+	"expo": {
+		"name": "NBCCBus",
+		"slug": "StanfordToNBCC",
+		"privacy": "public",
+		"sdkVersion": "35.0.0",
+		"platforms": [
+			"ios",
+			"android",
+			"web"
+		],
+		"version": "1.1.0",
+		"orientation": "portrait",
+		"icon": "./assets/busIcon.png",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#42AE4A"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": [
+			"**/*"
+		],
+		"ios": {
+			"bundleIdentifier": "com.nbcc.nbccBusAttendanceFinal",
+			"supportsTablet": true,
+			"infoPlist": {
+				"UIBackgroundModes": [
+					"location",
+					"fetch"
+				],
+				"NSLocationAlwaysAndWhenInUseUsageDescription": "Please Always enable Location Services. We need this to automatically check you off when you're near the bus stop.",
+				"NSLocationWhenInUseUsageDescription": "Please Always enable Location Services. We need this to automatically check you off when you're near the bus stop.",
+				"NSLocationAlwaysUsageDescription": "Please Always enable Location Services. We need this to automatically check you off when you're near the bus stop."
+			}
+		},
+		"android": {
+			"package": "com.nbcc.nbccBusAttendanceFinal",
+			"permissions": [
+      "ACCESS_COARSE_LOCATION",
+      "ACCESS_FINE_LOCATION"
+			]
+		}
+	}
 }

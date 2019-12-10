@@ -1,19 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createAppContainer } from 'react-navigation';
+import Attendance from './App/Pages/Attendance';
+import MainScreen from './App/Pages/MainScreen';
+import Schedule from './App/Pages/Schedule';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const TabNav = createBottomTabNavigator({
+  MyAttendance: {screen: MainScreen},
+  GeneralAttendance: {screen: Attendance},
+  Schedule:{screen:Schedule}
 });
+
+
+const MyApp = createAppContainer(TabNav);
+export default MyApp;
